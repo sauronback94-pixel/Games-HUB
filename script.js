@@ -225,3 +225,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+console.log("GAME DETAILS SCRIPT LOADED");
