@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ================= GAME DETAILS =================
 
 const gameModal = document.getElementById("game-modal");
-
+console.log("MODAL:", gameModal);
 const modalImage = document.getElementById("modal-image");
 
 const modalTitle = document.getElementById("modal-title");
