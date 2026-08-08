@@ -704,3 +704,41 @@ header {
 footer {
     background: #08080d;
 }
+/* ================= SEARCH ================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#game-search {
+    width: 0;
+    opacity: 0;
+
+    padding: 10px 0;
+
+    background: #171722;
+    color: white;
+
+    border: 1px solid #29293a;
+    border-radius: 8px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.search-box.active #game-search {
+    width: 220px;
+    opacity: 1;
+    padding: 10px 15px;
+}
+
+#game-search:focus {
+    border-color: #8b5cf6;
+}
+
+.search-btn {
+    flex-shrink: 0;
+}
