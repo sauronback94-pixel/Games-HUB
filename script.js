@@ -98,3 +98,97 @@ categoryButtons.forEach(function(button) {
     });
 
 });
+// ================= GAME DETAILS =================
+
+const modal =
+    document.getElementById("game-modal");
+
+const modalImage =
+    document.getElementById("modal-image");
+
+const modalTitle =
+    document.getElementById("modal-title");
+
+const modalGenre =
+    document.getElementById("modal-genre");
+
+const modalRating =
+    document.getElementById("modal-rating");
+
+const modalDescription =
+    document.getElementById("modal-description");
+
+const closeModal =
+    document.querySelector(".close-modal");
+
+
+const readMoreButtons =
+    document.querySelectorAll(".game-info button");
+
+
+readMoreButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const card =
+            button.closest(".game-card");
+
+
+        const image =
+            card.querySelector("img");
+
+        const title =
+            card.querySelector("h3");
+
+        const genre =
+            card.querySelector(".genre");
+
+        const rating =
+            card.querySelector(".rating");
+
+        const description =
+            card.querySelector(".game-info > p");
+
+
+        modalImage.src =
+            image.src;
+
+        modalImage.alt =
+            image.alt;
+
+        modalTitle.innerText =
+            title.innerText;
+
+        modalGenre.innerText =
+            genre.innerText;
+
+        modalRating.innerText =
+            rating.innerText;
+
+        modalDescription.innerText =
+            description.innerText;
+
+
+        modal.classList.add("active");
+
+    });
+
+});
+
+
+closeModal.addEventListener("click", function() {
+
+    modal.classList.remove("active");
+
+});
+
+
+modal.addEventListener("click", function(event) {
+
+    if (event.target === modal) {
+
+        modal.classList.remove("active");
+
+    }
+
+});
