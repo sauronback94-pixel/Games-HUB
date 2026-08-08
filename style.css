@@ -742,3 +742,139 @@ footer {
 .search-btn {
     flex-shrink: 0;
 }
+/* ================= EXTRA ANIMATIONS ================= */
+
+.game-card,
+.news-grid article,
+.guides div,
+.review-box {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* GAME CARD */
+
+.game-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 15px 35px rgba(139, 92, 246, 0.18);
+}
+
+
+/* NEWS CARD */
+
+.news-grid article:hover {
+    transform: translateY(-8px);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 15px 35px rgba(139, 92, 246, 0.15);
+}
+
+
+/* GUIDE CARD */
+
+.guides div:hover {
+    transform: translateY(-8px);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 15px 35px rgba(139, 92, 246, 0.15);
+}
+
+
+/* BUTTON EFFECT */
+
+.game-info button,
+.review-box button,
+.btn {
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.game-info button:hover,
+.review-box button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* SEARCH BUTTON */
+
+.search-btn {
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.search-btn:hover {
+    transform: scale(1.05);
+
+    border-color: #8b5cf6;
+}
+
+
+/* NAVIGATION */
+
+nav a {
+    position: relative;
+}
+
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #8b5cf6;
+
+    transition: width 0.3s ease;
+}
+
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* IMAGE ZOOM */
+
+.game-image {
+    overflow: hidden;
+}
+
+
+.game-image img {
+    transition:
+        transform 0.4s ease;
+}
+
+
+.game-card:hover .game-image img {
+    transform: scale(1.06);
+}
+
+
+/* HERO BUTTON */
+
+.primary:hover {
+    box-shadow:
+        0 8px 25px rgba(139, 92, 246, 0.35);
+}
