@@ -50,3 +50,51 @@ searchButton.addEventListener("click", function() {
     });
 
 });
+
+// ================= GAME CATEGORIES =================
+
+const categoryButtons =
+    document.querySelectorAll(".category-btn");
+
+categoryButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const selectedCategory =
+            button.dataset.category;
+
+
+        categoryButtons.forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        gameCards.forEach(function(card) {
+
+            const cardCategory =
+                card.dataset.category;
+
+
+            if (
+                selectedCategory === "all" ||
+                cardCategory === selectedCategory
+            ) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
