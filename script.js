@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
     // ================= BUTTON CLICK =================
 
     const buttons = document.querySelectorAll("button");
@@ -18,13 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // ================= GAME SEARCH =================
-
-    const searchButton =
-        document.querySelector(".search-btn");
+    // ================= GAME DATA =================
 
     const gameCards =
         document.querySelectorAll(".game-card");
+
+
+    // ================= SEARCH =================
+
+    const searchButton =
+        document.querySelector(".search-btn");
 
 
     if (searchButton) {
@@ -37,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (searchText === null) {
                 return;
             }
+
 
             const search =
                 searchText.toLowerCase().trim();
@@ -117,25 +122,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // ================= GAME DETAILS =================
+    // ================= GAME DETAILS MODAL =================
 
-    const modal =
+    const gameModal =
         document.getElementById("game-modal");
+
 
     const modalImage =
         document.getElementById("modal-image");
 
+
     const modalTitle =
         document.getElementById("modal-title");
+
 
     const modalGenre =
         document.getElementById("modal-genre");
 
+
     const modalRating =
         document.getElementById("modal-rating");
 
+
     const modalDescription =
         document.getElementById("modal-description");
+
 
     const closeModal =
         document.querySelector(".close-modal");
@@ -145,8 +156,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".game-info button");
 
 
+    console.log(
+        "Read More buttons:",
+        readMoreButtons.length
+    );
+
+
     if (
-        modal &&
+        gameModal &&
         modalImage &&
         modalTitle &&
         modalGenre &&
@@ -155,107 +172,90 @@ document.addEventListener("DOMContentLoaded", function () {
         closeModal
     ) {
 
+
         readMoreButtons.forEach(function (button) {
 
-            button.addEventListener("click", function () {
+            button.addEventListener("click", function (event) {
+
+                event.stopPropagation();
+
 
                 const card =
                     button.closest(".game-card");
 
 
                 const image =
-                    card.querySelector("img");
+                    card.querySelector(".game-image img");
+
 
                 const title =
-                    card.querySelect
-
-// ================= GAME DETAILS =================
-
-const gameModal = document.getElementById("game-modal");
-console.log("MODAL:", gameModal);
-const modalImage = document.getElementById("modal-image");
-
-const modalTitle = document.getElementById("modal-title");
-
-const modalGenre = document.getElementById("modal-genre");
-
-const modalRating = document.getElementById("modal-rating");
-
-const modalDescription =
-    document.getElementById("modal-description");
-
-const closeModal =
-    document.querySelector(".close-modal");
+                    card.querySelector("h3");
 
 
-const readMoreButtons =
-    document.querySelectorAll(".game-info button");
+                const genre =
+                    card.querySelector(".genre");
 
 
-console.log("Read More buttons:", readMoreButtons.length);
+                const rating =
+                    card.querySelector(".rating");
 
 
-readMoreButtons.forEach(function(button) {
-
-    button.addEventListener("click", function(event) {
-
-        event.stopPropagation();
-
-        const card =
-            button.closest(".game-card");
-
-        const image =
-            card.querySelector(".game-image img");
-
-        const title =
-            card.querySelector("h3");
-
-        const genre =
-            card.querySelector(".genre");
-
-        const rating =
-            card.querySelector(".rating");
-
-        const description =
-            card.querySelector(".game-info > p");
+                const description =
+                    card.querySelector(".game-info > p");
 
 
-        modalImage.src = image.src;
-
-        modalImage.alt = image.alt;
-
-        modalTitle.innerText = title.innerText;
-
-        modalGenre.innerText = genre.innerText;
-
-        modalRating.innerText = rating.innerText;
-
-        modalDescription.innerText =
-            description.innerText;
+                modalImage.src =
+                    image.src;
 
 
-        gameModal.classList.add("active");
-
-    });
-
-});
+                modalImage.alt =
+                    image.alt;
 
 
-closeModal.addEventListener("click", function() {
-
-    gameModal.classList.remove("active");
-
-});
+                modalTitle.innerText =
+                    title.innerText;
 
 
-gameModal.addEventListener("click", function(event) {
+                modalGenre.innerText =
+                    genre.innerText;
 
-    if (event.target === gameModal) {
 
-        gameModal.style.display = "none";
+                modalRating.innerText =
+                    rating.innerText;
+
+
+                modalDescription.innerText =
+                    description.innerText;
+
+
+                gameModal.classList.add("active");
+
+            });
+
+        });
+
+
+        // CLOSE BUTTON
+
+        closeModal.addEventListener("click", function () {
+
+            gameModal.classList.remove("active");
+
+        });
+
+
+        // CLOSE BY CLICKING OUTSIDE
+
+        gameModal.addEventListener("click", function (event) {
+
+            if (event.target === gameModal) {
+
+                gameModal.classList.remove("active");
+
+            }
+
+        });
 
     }
 
 });
-                
-console.log("GAME DETAILS SCRIPT LOADED");
