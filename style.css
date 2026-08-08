@@ -1,35 +1,3 @@
-
-
-
-/* ================= MOBILE ================= */
-
-
-
-
-    .game-modal-content img {
-
-        min-height: 250px;
-
-        height: 250px;
-
-    }
-
-
-    .modal-info {
-
-        padding: 25px;
-
-    }
-
-
-    .modal-info h2 {
-
-        font-size: 28px;
-
-    }
-
-}
-
 /* ================= GAME MODAL ================= */
 
 .game-modal {
@@ -100,6 +68,10 @@
     z-index: 10;
 }
 
+.close-modal:hover {
+    background: #a78bfa;
+}
+
 @media (max-width: 800px) {
 
     .game-modal-content {
@@ -115,6 +87,10 @@
 
     .modal-info {
         padding: 25px;
+    }
+
+    .modal-info h2 {
+        font-size: 28px;
     }
 
 }
