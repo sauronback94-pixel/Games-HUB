@@ -338,19 +338,11 @@ nav a:hover {
 }
 
 
-.game-image {
-
-    height: 230px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    font-size: 90px;
-
-    background: #20202d;
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 
@@ -656,10 +648,4 @@ footer p {
 
     }
 
-    .game-image img {
-        
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
+   
