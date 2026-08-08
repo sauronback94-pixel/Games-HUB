@@ -1,50 +1,88 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ================= SEARCH =================
+    // ================= GAME SEARCH =================
 
-    const searchButton =
-        document.querySelector(".search-btn");
+const searchBox =
+    document.querySelector(".search-box");
 
-    const gameCards =
-        document.querySelectorAll(".game-card");
+const searchButton =
+    document.querySelector(".search-btn");
 
+const searchInput =
+    document.getElementById("game-search");
+
+const gameCards =
+    document.querySelectorAll(".game-card");
+
+
+if (
+    searchBox &&
+    searchButton &&
+    searchInput
+) {
 
     searchButton.addEventListener("click", function () {
 
-        const searchText =
-            prompt("Search for a game:");
+        searchBox.classList.toggle("active");
 
-        if (searchText === null) {
-            return;
+        if (searchBox.classList.contains("active")) {
+
+            searchInput.focus();
+
+        } else {
+
+            searchInput.value = "";
+
+            gameCards.forEach(function (card) {
+
+                card.style.display = "block";
+
+            });
+
         }
-
-
-        const search =
-            searchText.toLowerCase().trim();
-
-
-        gameCards.forEach(function (card) {
-
-            const gameName =
-                card.querySelector("h3")
-                .innerText
-                .toLowerCase();
-
-
-            if (gameName.includes(search)) {
-
-                card.style.display = "";
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
 
     });
 
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            const search =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
+
+
+            gameCards.forEach(function (card) {
+
+                const gameName =
+                    card
+                        .querySelector("h3")
+                        .innerText
+                        .toLowerCase();
+
+
+                if (
+                    gameName.includes(search)
+                ) {
+
+                    card.style.display =
+                        "block";
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
+
+        }
+    );
+
+}
 
     // ================= CATEGORIES =================
 
