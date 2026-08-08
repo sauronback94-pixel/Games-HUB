@@ -878,3 +878,161 @@ nav a:hover::after {
     box-shadow:
         0 8px 25px rgba(139, 92, 246, 0.35);
 }
+/* ================= MOBILE POLISH ================= */
+
+@media (max-width: 800px) {
+
+    /* HEADER */
+
+    header {
+        height: auto;
+        min-height: 70px;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .search-box {
+        margin-left: auto;
+    }
+
+    .search-box.active #game-search {
+        width: 160px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 60px 5%;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 13px 20px;
+    }
+
+    .game-placeholder {
+        width: 100%;
+        max-width: 400px;
+        height: 350px;
+        font-size: 90px;
+    }
+
+
+    /* SECTIONS */
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+
+
+    /* GAME CARDS */
+
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .game-image {
+        height: 250px;
+    }
+
+    .game-info {
+        padding: 22px;
+    }
+
+
+    /* REVIEWS */
+
+    .review-box {
+        padding: 30px 22px;
+    }
+
+    .big-rating {
+        font-size: 65px;
+    }
+
+
+    /* NEWS */
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .news-image {
+        height: 180px;
+    }
+
+
+    /* GUIDES */
+
+    .guides {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .guides div {
+        padding: 30px;
+    }
+
+
+    /* MODAL */
+
+    .game-modal {
+        padding: 15px;
+    }
+
+    .game-modal-content {
+        width: 100%;
+        max-height: 92vh;
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+
+    .game-modal-content img {
+        width: 100%;
+        height: 220px;
+        min-height: 220px;
+    }
+
+    .modal-info {
+        padding: 25px 20px;
+    }
+
+    .modal-info h2 {
+        font-size: 28px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 45px 5%;
+    }
+
+}
