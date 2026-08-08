@@ -1,153 +1,9 @@
-/* ================= GAME DETAILS MODAL ================= */
 
-.game-modal {
-
-    display: none;
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.85);
-
-    z-index: 9999;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-}
-
-
-.game-modal.active {
-
-    display: flex;
-
-}
-
-
-.game-modal-content {
-
-    position: relative;
-
-    width: 100%;
-
-    max-width: 850px;
-
-    max-height: 90vh;
-
-    background: #14141d;
-
-    border: 1px solid #29293a;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-
-}
-
-
-.game-modal-content img {
-
-    width: 100%;
-
-    height: 100%;
-
-    min-height: 400px;
-
-    object-fit: cover;
-
-}
-
-
-.modal-info {
-
-    padding: 40px;
-
-    overflow-y: auto;
-
-}
-
-
-.modal-info h2 {
-
-    font-size: 35px;
-
-    margin: 15px 0;
-
-}
-
-
-.modal-info p {
-
-    color: #999;
-
-    line-height: 1.7;
-
-    margin-bottom: 20px;
-
-}
-
-
-.close-modal {
-
-    position: absolute;
-
-    top: 15px;
-
-    right: 15px;
-
-    width: 40px;
-
-    height: 40px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #8b5cf6;
-
-    color: white;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    z-index: 10;
-
-}
-
-
-.close-modal:hover {
-
-    background: #a78bfa;
-
-}
 
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 800px) {
 
-    .game-modal-content {
-
-        grid-template-columns: 1fr;
-
-        max-height: 90vh;
-
-        overflow-y: auto;
-
-    }
 
 
     .game-modal-content img {
@@ -170,6 +26,95 @@
 
         font-size: 28px;
 
+    }
+
+}
+
+/* ================= GAME MODAL ================= */
+
+.game-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.game-modal.active {
+    display: flex;
+}
+
+.game-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 850px;
+    max-height: 90vh;
+    overflow: hidden;
+    background: #14141d;
+    border: 1px solid #29293a;
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.game-modal-content img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.modal-info {
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.modal-info h2 {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.modal-info p {
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #8b5cf6;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@media (max-width: 800px) {
+
+    .game-modal-content {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .game-modal-content img {
+        min-height: 220px;
+        height: 220px;
+    }
+
+    .modal-info {
+        padding: 25px;
     }
 
 }
