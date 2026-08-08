@@ -234,7 +234,7 @@ readMoreButtons.forEach(function(button) {
             description.innerText;
 
 
-        gameModal.style.display = "flex";
+        gameModal.classList.add("active");
 
     });
 
@@ -243,7 +243,7 @@ readMoreButtons.forEach(function(button) {
 
 closeModal.addEventListener("click", function() {
 
-    gameModal.style.display = "none";
+    gameModal.classList.remove("active");
 
 });
 
