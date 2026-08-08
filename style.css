@@ -688,3 +688,19 @@ footer p {
 
 }
 ```
+body {
+    background: #08080d !important;
+    color: white;
+}
+
+header {
+    background: #0d0d14;
+}
+
+.dark-section {
+    background: #0d0d14;
+}
+
+footer {
+    background: #08080d;
+}
